@@ -45,6 +45,8 @@ struct struct1 {
 //    [self insertSort];
 //    [self quickSort];
     [self testStruct];
+    
+    [self binarySearchAlgorithm];
 }
 
 - (void)testStruct{
@@ -208,10 +210,42 @@ struct struct1 {
     return _window;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+// 二分查找
+
+- (void)binarySearchAlgorithm{
+    
+    NSMutableArray *arr = [NSMutableArray arrayWithCapacity:100];
+    for (NSInteger i = 0; i < 100; i++) {
+        [arr addObject:@(i)];
+    }
+    
+    NSInteger start = 0;
+    NSInteger end = arr.count -1 ;
+    NSInteger index;
+    NSInteger guess = 0;
+    
+    NSInteger find = 77;
+    
+    while (start <= end) {
+        index = (start + end)/2;
+        guess = [arr[index] integerValue];
+        
+        if (guess < find) {
+            start = index + 1;
+        } else if (guess > find) {
+            end = index - 1;
+        } else {
+            break;
+        }
+        
+    }
+    
+    NSLog(@"%ld",index);
+    
+    
 }
+
 
 
 @end
