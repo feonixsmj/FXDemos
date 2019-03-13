@@ -46,7 +46,9 @@ struct struct1 {
 //    [self quickSort];
     [self testStruct];
     
-    [self binarySearchAlgorithm];
+//    [self binarySearchAlgorithm];
+    
+    [self recursionQuickSort];
 }
 
 - (void)testStruct{
@@ -149,6 +151,43 @@ struct struct1 {
     }
     
     NSLog(@"插入 %@",muArray);
+}
+
+//递归 实现快排
+- (void)recursionQuickSort{
+    
+    NSArray *arr = [self quickSort:self.array];
+    
+    
+    NSLog(@"递归快排 %@", arr);
+}
+
+- (NSArray *)quickSort:(NSArray *)array{
+    
+    if (array.count < 2) {
+        return array;
+    }
+    
+    NSMutableArray *less = [[NSMutableArray alloc] init];
+    NSMutableArray *greater = [[NSMutableArray alloc] init];
+    
+    NSInteger pivot = [array.firstObject integerValue];
+    
+    for (NSInteger i = 1; i <array.count; i++) {
+        if ([array[i] integerValue] <= pivot) {
+            [less addObject:array[i]];
+        } else {
+            [greater addObject:array[i]];
+        }
+    }
+    
+    NSMutableArray *newArray = [[NSMutableArray alloc] init];
+    
+    [newArray addObjectsFromArray:[self quickSort:less]];
+    [newArray addObject:@(pivot)];
+    [newArray addObjectsFromArray:[self quickSort:greater]];
+    
+    return newArray;
 }
 
 - (void)quickSort{
