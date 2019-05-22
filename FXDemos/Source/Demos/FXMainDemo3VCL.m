@@ -254,6 +254,7 @@ struct struct1 {
 
 - (void)binarySearchAlgorithm{
     
+    //构造一个有序数组
     NSMutableArray *arr = [NSMutableArray arrayWithCapacity:100];
     for (NSInteger i = 0; i < 100; i++) {
         [arr addObject:@(i)];
@@ -275,6 +276,7 @@ struct struct1 {
         } else if (guess > find) {
             end = index - 1;
         } else {
+            //相等 即是找到了
             break;
         }
         

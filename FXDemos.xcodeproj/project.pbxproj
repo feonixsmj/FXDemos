@@ -10,6 +10,8 @@
 		4415B54A21CB46B400CAED95 /* FXClassTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4415B54921CB46B400CAED95 /* FXClassTest.m */; };
 		4415B55221CB875900CAED95 /* FXTestTempVCL.m in Sources */ = {isa = PBXBuildFile; fileRef = 4415B55021CB875900CAED95 /* FXTestTempVCL.m */; };
 		4415B55521CB87A500CAED95 /* FXTestTempVCL.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4415B55421CB87A500CAED95 /* FXTestTempVCL.storyboard */; };
+		4485A05B2293E59300E355FC /* FXMainDemo4VCL.m in Sources */ = {isa = PBXBuildFile; fileRef = 4485A05A2293E59300E355FC /* FXMainDemo4VCL.m */; };
+		4485A05F2295334A00E355FC /* FXMainDemo5VCL.m in Sources */ = {isa = PBXBuildFile; fileRef = 4485A05E2295334A00E355FC /* FXMainDemo5VCL.m */; };
 		449DC6CE21AE7AF7000FB880 /* FXWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 449DC6CD21AE7AF7000FB880 /* FXWindow.m */; };
 		449DC6D121AE7BA1000FB880 /* FXTestVCL.m in Sources */ = {isa = PBXBuildFile; fileRef = 449DC6D021AE7BA1000FB880 /* FXTestVCL.m */; };
 		44D67325214617FB005AD959 /* FXBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 44D67324214617FB005AD959 /* FXBaseModel.m */; };
@@ -36,6 +38,10 @@
 		4415B54F21CB875900CAED95 /* FXTestTempVCL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FXTestTempVCL.h; sourceTree = "<group>"; };
 		4415B55021CB875900CAED95 /* FXTestTempVCL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FXTestTempVCL.m; sourceTree = "<group>"; };
 		4415B55421CB87A500CAED95 /* FXTestTempVCL.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FXTestTempVCL.storyboard; sourceTree = "<group>"; };
+		4485A0592293E59300E355FC /* FXMainDemo4VCL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FXMainDemo4VCL.h; sourceTree = "<group>"; };
+		4485A05A2293E59300E355FC /* FXMainDemo4VCL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FXMainDemo4VCL.m; sourceTree = "<group>"; };
+		4485A05D2295334A00E355FC /* FXMainDemo5VCL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FXMainDemo5VCL.h; sourceTree = "<group>"; };
+		4485A05E2295334A00E355FC /* FXMainDemo5VCL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FXMainDemo5VCL.m; sourceTree = "<group>"; };
 		449DC6CC21AE7AF7000FB880 /* FXWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FXWindow.h; sourceTree = "<group>"; };
 		449DC6CD21AE7AF7000FB880 /* FXWindow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FXWindow.m; sourceTree = "<group>"; };
 		449DC6CF21AE7BA1000FB880 /* FXTestVCL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FXTestVCL.h; sourceTree = "<group>"; };
@@ -91,6 +97,24 @@
 				4415B55421CB87A500CAED95 /* FXTestTempVCL.storyboard */,
 			);
 			path = Temp;
+			sourceTree = "<group>";
+		};
+		4485A0582293E57000E355FC /* Demo4 */ = {
+			isa = PBXGroup;
+			children = (
+				4485A0592293E59300E355FC /* FXMainDemo4VCL.h */,
+				4485A05A2293E59300E355FC /* FXMainDemo4VCL.m */,
+			);
+			path = Demo4;
+			sourceTree = "<group>";
+		};
+		4485A05C2295333200E355FC /* Demo5 */ = {
+			isa = PBXGroup;
+			children = (
+				4485A05D2295334A00E355FC /* FXMainDemo5VCL.h */,
+				4485A05E2295334A00E355FC /* FXMainDemo5VCL.m */,
+			);
+			path = Demo5;
 			sourceTree = "<group>";
 		};
 		44D673212146178E005AD959 /* Demo2 */ = {
@@ -211,6 +235,8 @@
 		44FBB95C212EA85A00CED5A3 /* Demos */ = {
 			isa = PBXGroup;
 			children = (
+				4485A05C2295333200E355FC /* Demo5 */,
+				4485A0582293E57000E355FC /* Demo4 */,
 				44D673212146178E005AD959 /* Demo2 */,
 				44FBB966212EAB1A00CED5A3 /* NSOperationQueueDemo */,
 				44FBB963212EA9EB00CED5A3 /* FXMainDemo3VCL.h */,
@@ -318,7 +344,9 @@
 				449DC6D121AE7BA1000FB880 /* FXTestVCL.m in Sources */,
 				4415B54A21CB46B400CAED95 /* FXClassTest.m in Sources */,
 				449DC6CE21AE7AF7000FB880 /* FXWindow.m in Sources */,
+				4485A05F2295334A00E355FC /* FXMainDemo5VCL.m in Sources */,
 				44FBB935212E96AC00CED5A3 /* AppDelegate.m in Sources */,
+				4485A05B2293E59300E355FC /* FXMainDemo4VCL.m in Sources */,
 				44D6732F214618BD005AD959 /* FXBaseViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

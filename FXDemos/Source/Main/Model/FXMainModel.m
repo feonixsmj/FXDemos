@@ -23,12 +23,19 @@
                        @{@"title":@"Demo1 -NSOperationQueueDemo",
                          @"tag":@(1)
                          },
-                       @{@"title":@"test2",
+                       @{@"title":@"Demo2 -UI",
                          @"tag":@(2)
                          },
-                       @{@"title":@"test3",
+                       @{@"title":@"Demo3 - 排序算法",
                          @"tag":@(3)
-                         }];
+                         },
+                       @{@"title":@"Demo4 - 杂物",
+                         @"tag":@(4)
+                         },
+                       @{@"title":@"Demo5 - 算法",
+                         @"tag":@(5)
+                         },
+                       ];
     }
     return self;
 }
