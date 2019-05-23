@@ -110,8 +110,7 @@ struct Node{
     struct Node *head = NULL;
     struct Node *cur = NULL;
     
-    for (NSInteger i = 0; i < 10; i ++) {
-        
+    for (NSInteger i = 0; i < 10; i++) {
         struct Node *node = malloc(sizeof(struct Node));
         node->data = i;
         if (head == NULL) {
@@ -123,6 +122,7 @@ struct Node{
     }
     
     cur->next = NULL;
+    
     return head;
 }
 
@@ -138,18 +138,17 @@ struct Node{
 -(void)fanzhuanNode:(struct Node*)node{
     
     //头插法
-    struct Node *head = NULL;
-    struct Node *temp = NULL;
+    struct Node *newH = NULL;
     
     while (node != NULL) {
-        temp = node->next;
+        struct Node *temp = node->next;
         
-        node->next = head;
-        head = node;
+        node->next = newH;
+        newH = node;
         node = temp;
-    
     }
-    [self printList:head];
+    
+    [self printList:newH];
 }
 
 @end

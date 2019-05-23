@@ -10,6 +10,7 @@
 
 @interface FXMainDemo4VCL ()
 
+@property (nonatomic, strong) UIImageView *imageView;
 @end
 
 @implementation FXMainDemo4VCL
@@ -18,7 +19,33 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     
-    [self testNSSet];
+//    [self testNSSet];
+    [self testHCImage];
+}
+
+//图片合成
+- (void)testHCImage{
+    [self.view addSubview: self.imageView];
+    
+    UIImage *upImg = [UIImage imageNamed:@"image1"];
+    UIImage *downImg = [UIImage imageNamed:@"image2"];
+    CGFloat width = 320.f;
+    CGFloat height = 480.f;
+    UIGraphicsBeginImageContext(CGSizeMake(width, height));//展开画布，自定义尺寸
+    [upImg drawInRect:CGRectMake(0, 0, width, height)];
+    [downImg drawInRect:CGRectMake(width - 50, height - 50, 50, 50)];//根据需要定义子图片的位置
+    UIImage *resultImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();//关闭画布
+    
+    self.imageView.image = resultImage;
+}
+
+- (UIImageView *)imageView{
+    if (!_imageView) {
+        _imageView = [UIImageView new];
+        _imageView.frame = CGRectMake(0, 100, 320, 480);
+    }
+    return _imageView;
 }
 
 /*
