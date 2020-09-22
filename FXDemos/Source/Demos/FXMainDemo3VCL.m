@@ -44,11 +44,11 @@ struct struct1 {
 //    [self bubbleSort];
 //    [self insertSort];
 //    [self quickSort];
-    [self testStruct];
+//    [self testStruct];
     
 //    [self binarySearchAlgorithm];
     
-    [self recursionQuickSort];
+//    [self recursionQuickSort];
 }
 
 - (void)testStruct{

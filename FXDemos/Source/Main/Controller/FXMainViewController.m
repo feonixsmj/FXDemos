@@ -71,7 +71,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     FXMainItem *item = self.model.items[indexPath.row];
-    NSString *className = [NSString stringWithFormat:@"FXMainDemo%ldVCL",indexPath.row+1];
+    NSString *className = [NSString stringWithFormat:@"FXMainDemo%ldVCL",item.index];
     Class class = NSClassFromString(className);
     
     UIViewController *vcl = [[class alloc] init];

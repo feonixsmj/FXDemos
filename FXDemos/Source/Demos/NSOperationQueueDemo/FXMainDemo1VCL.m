@@ -32,6 +32,7 @@
     
 //    [self NSOperationQueueTest];
 //    [self NSOperationQueueTest2];
+//    [self dispatchApply];
     
     [self gcdGroupTest];
 }
@@ -266,33 +267,73 @@
 }
 
 - (void)dispatchApply{
+
     NSMutableArray *muArr = [[NSMutableArray alloc] init];
     for (NSInteger i = 0; i < 10; i++) {
         [muArr addObject:@(i)];
     }
     dispatch_queue_t globalQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0);
     dispatch_async(globalQueue, ^{
+        //普通for循环，是在一个线程里遍历
+//        for (NSInteger i=0; i < 10; i++) {
+//            NSLog(@"%ld:thread:%@",i,[NSThread currentThread]);
+//        }
+        //每个数组元素都添加一个block任务，且在多个线程中执行
         dispatch_apply(muArr.count, globalQueue, ^(size_t index) {
-            NSLog(@"%zu: %@",index,muArr[index]);
+            NSLog(@"%zu: %@ thread:%@",index,muArr[index],[NSThread currentThread]);
         });
-        /*
-         *dispatch_apply 函数中的任务全部处理完毕
-         */
+        
+//        dispatch_apply 函数中的任务全部处理完毕
+         
         dispatch_async(dispatch_get_main_queue(), ^{
             //回到主线程处理，用户界面刷新等。
             NSLog(@"done");
         });
     });
+
+}
+
+- (void)testGCD{
+    //测试 同步执行多个并发队列 有什么效果。
+    dispatch_queue_t currentQueue = dispatch_queue_create("CQ", DISPATCH_CURRENT_QUEUE_LABEL);
     
+    dispatch_sync(currentQueue, ^{
+        NSLog(@"1");
+        dispatch_sync(currentQueue, ^{
+            NSLog(@"2");
+        });
+        NSLog(@"3");
+    });
+    
+    //成功死锁。队列始终是FIFO 不管是串行 还是 并行
+}
+
+- (void)testGCD2{
+    dispatch_queue_t currentQueue = dispatch_queue_create("CQ", DISPATCH_CURRENT_QUEUE_LABEL);
+    
+    dispatch_async(currentQueue, ^{
+        NSLog(@"1");
+        [self performSelector:@selector(printSomeThing) withObject:nil afterDelay:0];
+        NSLog(@"3");
+    });
+    //打印 1，3 。  2不打印，子线程不执行（子线程默认没有建立runloop）
+}
+
+- (void)printSomeThing{
+    NSLog(@"###2");
 }
 
 - (void)gcdGroupTest{
-    [self semaphoreTest];
-    return;
-    /*
+//    [self testGCD];
+    [self testGCD2];
+    
+//    [self semaphoreTest];
+//    return;
+ /*
     NSLog(@"task1");
     dispatch_queue_t otherQueue = dispatch_queue_create("com.test.gcd.serialQueue", DISPATCH_QUEUE_SERIAL);
-        dispatch_queue_t otherQueue2 = dispatch_queue_create("com.test.gcd.serialQueue2", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t otherQueue2 = dispatch_queue_create("com.test.gcd.serialQueue2", DISPATCH_QUEUE_SERIAL);
+    
     dispatch_async(otherQueue, ^{
         NSLog(@"task2");
         //发生死锁，当前执行队列和dispatch_sync 执行队列相同且都是同步队列
@@ -306,7 +347,10 @@
     });
     //打印 task1 task2 task3(task2,task3顺序不定)
     NSLog(@"task3");
-     */
+   
+    */
+    
+    
     
     /*
     //主线程中执行
@@ -336,19 +380,9 @@
     //打印
     //thread<NSThread: 0x600000002500>{number = 3, name = (null)}
     //thread<NSThread: 0x600000002500>{number = 3, name = (null)}
-     
+     是否开辟线程由系统内核决定
      */
     
-    /*
-    dispatch_queue_t queue1 = dispatch_queue_create("com.test.gcd.concurrentQueue", DISPATCH_QUEUE_CONCURRENT);
-    dispatch_queue_t queue2 = dispatch_queue_create("com.test.gcd.concurrentQueue2", DISPATCH_QUEUE_CONCURRENT);
-    dispatch_async(queue1, ^{
-        NSLog(@"thread%@",[NSThread currentThread]);
-        dispatch_async(queue2, ^{
-            NSLog(@"thread%@",[NSThread currentThread]);
-        });
-    });
-     */
 //    DISPATCH_QUEUE_SERIAL
 //    serialQueue
     /*
@@ -371,7 +405,8 @@
     dispatch_async(concurrentQueue, ^{
         NSLog(@"task5 thread:%@",[NSThread currentThread]);
     });
-    
+     
+    //改变队列的属性，从并行 到 串行， 按序输出
     */
     
     /*

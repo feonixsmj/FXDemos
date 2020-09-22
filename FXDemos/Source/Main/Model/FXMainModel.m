@@ -35,6 +35,9 @@
                        @{@"title":@"Demo5 - 算法",
                          @"tag":@(5)
                          },
+                       @{@"title":@"Demo7 - 链表、二叉树",
+                         @"tag":@(7)
+                         },
                        ];
     }
     return self;
@@ -46,6 +49,7 @@
         for (NSDictionary *dict in self.datas) {
             FXMainItem *item = [FXMainItem new];
             item.title = dict[@"title"];
+            item.index = [dict[@"tag"] integerValue];
             [muArr addObject:item];
         }
         _items = muArr;
