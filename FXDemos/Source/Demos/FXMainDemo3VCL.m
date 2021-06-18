@@ -49,6 +49,7 @@ struct struct1 {
 //    [self binarySearchAlgorithm];
     
 //    [self recursionQuickSort];
+    [self mergeSort];
 }
 
 - (void)testStruct{
@@ -288,5 +289,77 @@ struct struct1 {
 }
 
 
+// 归并排序，分治法
+- (void)mergeSort{
+    NSArray *arr = @[@(7),@(6),@(5),@(4),@(3),@(2),@(1)];
+    NSMutableArray *orgArr = [NSMutableArray arrayWithArray:arr];
+    // 辅助空间数组
+    NSMutableArray *fMuArr = [NSMutableArray arrayWithCapacity:arr.count];
+    
+    [self _mergeSort:orgArr fArr:fMuArr start:0 end:arr.count - 1];
+}
+
+- (void)_mergeSort:(NSMutableArray *)orgArr
+              fArr:(NSMutableArray *)fMuArr
+             start:(NSInteger)start
+               end:(NSInteger)end{
+    
+    if (start >= end) {
+        return;
+    }
+    NSInteger mid = start + (end - start) /2;
+    
+    NSLog(@"Left_subArr  = %@", [orgArr subarrayWithRange:NSMakeRange(start, mid -start+1)]);
+    [self _mergeSort:orgArr fArr:fMuArr start:start end:mid];
+    
+    NSLog(@"Right_subArr = %@", [orgArr subarrayWithRange:NSMakeRange(mid + 1, end - mid )]);
+    [self _mergeSort:orgArr fArr:fMuArr start:mid + 1 end:end];
+    
+    NSLog(@"合并前 左%@", [orgArr subarrayWithRange:NSMakeRange(start, mid -start+1 )]);
+    NSLog(@"合并前 右%@", [orgArr subarrayWithRange:NSMakeRange(mid +1, end - mid)]);
+    [self _merge:orgArr auxiliary:fMuArr start:start middel:mid end:end];
+    NSLog(@"合并后%@", [orgArr subarrayWithRange:NSMakeRange(start, end - start +1 )]);
+    
+}
+
+- (void)_merge:(NSMutableArray *)orgArr
+     auxiliary:(NSMutableArray *)fMuArr
+           start:(NSInteger)start
+        middel:(NSInteger)mid
+          end:(NSInteger)end {
+    // 将原数组的数据复制辅助数组
+    NSLog(@"star = %ld mid= %ld end= %ld", start,mid,end);
+    for (NSInteger i = start; i <= end; i ++) {
+        fMuArr[i] = orgArr[i];
+    }
+//    NSLog(@"回归数组%@ start= %ld, end = %ld", fMuArr, start,end);
+//    NSLog(@" start= %ld, end = %ld", start,end);
+    // 初始化，i指向左半部分的起始索引位置l；j指向右半部分起始索引位置mid+1
+    
+    NSInteger i = start;
+    NSInteger j = mid + 1;
+    
+    //合并两个无序数组
+    for (NSInteger k = start; k <= end; k ++) {
+        
+        if (j > end) {
+            // 右边处理完了
+            orgArr[k] = fMuArr[i];
+            i ++;
+        } else if (i > mid ){
+            // 左边处理完了
+            orgArr[k] = fMuArr[j];
+            j ++;
+        } else if ([fMuArr[i] integerValue] <= [fMuArr[j] integerValue]) {
+            orgArr[k] = fMuArr[i];
+            i ++;
+        } else if ([fMuArr[i] integerValue] > [fMuArr[j] integerValue]) {
+            orgArr[k] = fMuArr[j];
+            j ++;
+        }
+    }
+    
+//     NSLog(@"回归处理结束%@ ,start= %ld,mid=%ld， end=%ld", orgArr,start,mid,end);
+}
 
 @end

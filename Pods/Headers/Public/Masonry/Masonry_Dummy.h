@@ -1,0 +1,1 @@
+../../../Masonry/Masonry.framework/Versions/A/Headers/Masonry_Dummy.h

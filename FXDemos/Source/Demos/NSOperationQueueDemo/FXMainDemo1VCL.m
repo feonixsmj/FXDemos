@@ -37,6 +37,12 @@
     [self gcdGroupTest];
 }
 
+#pragma mark - NEW TEST
+
+- (void)newTest{
+    
+}
+
 #pragma mark - ================ NSInvocationOperation ================
 - (void)NSInvocationOperationTest{
     NSInvocationOperation *operation = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(invocationOperationRun:) object:@{@"key":@"111"}];
@@ -479,6 +485,7 @@
     });
     
     //DISPATCH_TIME_FOREVER 永久等待，同样我们可以设置等待的时间
+
     dispatch_time_t time = dispatch_time(DISPATCH_TIME_NOW, 1ull*NSEC_PER_SEC);
     long result = dispatch_group_wait(group, time);
     if (result == 0) {
@@ -500,4 +507,16 @@
      
      */
 }
+
+
+//dispatch_group_t group = dispatch_group_create();
+//dispatch_time_t time = dispatch_time(DISPATCH_TIME_NOW, 1ull*NSEC_PER_SEC);
+//long result = dispatch_group_wait(group, time);
+//if (result == 0) {
+//   // 属于Dispatch Group 的全部处理执行结束
+//   NSLog(@"task Done");
+//} else {
+//   // 属于Dispatch Group 的某个处理还在执行中
+//   NSLog(@"task Doing");
+//}
 @end

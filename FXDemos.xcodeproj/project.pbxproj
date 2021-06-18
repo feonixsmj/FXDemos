@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B76A4779DC1A28644A76350 /* Pods_FXDemos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFD94A6EB256BAE5E20C326F /* Pods_FXDemos.framework */; };
 		3A5CFEF3250F92EC00826CB4 /* FXWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5CFEBA250F92EB00826CB4 /* FXWindow.m */; };
 		3A5CFEF4250F92EC00826CB4 /* FXTestTempVCL.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5CFEBE250F92EB00826CB4 /* FXTestTempVCL.m */; };
 		3A5CFEF5250F92EC00826CB4 /* FXTestTempVCL.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A5CFEBF250F92EB00826CB4 /* FXTestTempVCL.storyboard */; };
@@ -37,6 +38,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		31D328FD1787A4EF72B4A2EE /* Pods-FXDemos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FXDemos.debug.xcconfig"; path = "Target Support Files/Pods-FXDemos/Pods-FXDemos.debug.xcconfig"; sourceTree = "<group>"; };
 		3A5CFEBA250F92EB00826CB4 /* FXWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXWindow.m; sourceTree = "<group>"; };
 		3A5CFEBB250F92EB00826CB4 /* FunctionThrotUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FunctionThrotUtil.h; sourceTree = "<group>"; };
 		3A5CFEBD250F92EB00826CB4 /* FXTestTempVCL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXTestTempVCL.h; sourceTree = "<group>"; };
@@ -88,6 +90,8 @@
 		44FBB93F212E96AF00CED5A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		44FBB941212E96AF00CED5A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		44FBB942212E96AF00CED5A3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		84F4A8DDFAF806EFE3A42981 /* Pods-FXDemos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FXDemos.release.xcconfig"; path = "Target Support Files/Pods-FXDemos/Pods-FXDemos.release.xcconfig"; sourceTree = "<group>"; };
+		EFD94A6EB256BAE5E20C326F /* Pods_FXDemos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FXDemos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B76A4779DC1A28644A76350 /* Pods_FXDemos.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,14 +109,14 @@
 		3A5CFEB9250F92EB00826CB4 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				3A5CFEBA250F92EB00826CB4 /* FXWindow.m */,
-				3A5CFEBB250F92EB00826CB4 /* FunctionThrotUtil.h */,
-				3A5CFEBC250F92EB00826CB4 /* Temp */,
-				3A5CFEC0250F92EB00826CB4 /* FXWindow.h */,
-				3A5CFEC1250F92EB00826CB4 /* FunctionThrotUtil.m */,
-				3A5CFEC2250F92EB00826CB4 /* Main */,
-				3A5CFECF250F92EC00826CB4 /* Demos */,
 				3A5CFEEC250F92EC00826CB4 /* Base */,
+				3A5CFECF250F92EC00826CB4 /* Demos */,
+				3A5CFEBB250F92EB00826CB4 /* FunctionThrotUtil.h */,
+				3A5CFEC1250F92EB00826CB4 /* FunctionThrotUtil.m */,
+				3A5CFEC0250F92EB00826CB4 /* FXWindow.h */,
+				3A5CFEBA250F92EB00826CB4 /* FXWindow.m */,
+				3A5CFEC2250F92EB00826CB4 /* Main */,
+				3A5CFEBC250F92EB00826CB4 /* Temp */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -169,18 +174,18 @@
 		3A5CFECF250F92EC00826CB4 /* Demos */ = {
 			isa = PBXGroup;
 			children = (
-				3A5CFED0250F92EC00826CB4 /* FXClassTest.h */,
-				3A5CFED1250F92EC00826CB4 /* FXTestVCL.m */,
-				3A5CFED2250F92EC00826CB4 /* Demo5 */,
 				3A5CFED5250F92EC00826CB4 /* Demo2 */,
 				3A5CFEDB250F92EC00826CB4 /* Demo4 */,
-				3A5CFEDE250F92EC00826CB4 /* FXMainDemo3VCL.m */,
-				3A5CFEDF250F92EC00826CB4 /* NSOperationQueueDemo */,
-				3A5CFEE2250F92EC00826CB4 /* FXClassTest.m */,
-				3A5CFEE3250F92EC00826CB4 /* FXMainDemo3VCL.h */,
+				3A5CFED2250F92EC00826CB4 /* Demo5 */,
 				3A5CFEE4250F92EC00826CB4 /* Demo6 */,
 				3A5CFEE8250F92EC00826CB4 /* Demo7 */,
+				3A5CFED0250F92EC00826CB4 /* FXClassTest.h */,
+				3A5CFEE2250F92EC00826CB4 /* FXClassTest.m */,
+				3A5CFEE3250F92EC00826CB4 /* FXMainDemo3VCL.h */,
+				3A5CFEDE250F92EC00826CB4 /* FXMainDemo3VCL.m */,
 				3A5CFEEB250F92EC00826CB4 /* FXTestVCL.h */,
+				3A5CFED1250F92EC00826CB4 /* FXTestVCL.m */,
+				3A5CFEDF250F92EC00826CB4 /* NSOperationQueueDemo */,
 			);
 			path = Demos;
 			sourceTree = "<group>";
@@ -188,8 +193,8 @@
 		3A5CFED2250F92EC00826CB4 /* Demo5 */ = {
 			isa = PBXGroup;
 			children = (
-				3A5CFED3250F92EC00826CB4 /* FXMainDemo5VCL.m */,
 				3A5CFED4250F92EC00826CB4 /* FXMainDemo5VCL.h */,
+				3A5CFED3250F92EC00826CB4 /* FXMainDemo5VCL.m */,
 			);
 			path = Demo5;
 			sourceTree = "<group>";
@@ -197,9 +202,9 @@
 		3A5CFED5250F92EC00826CB4 /* Demo2 */ = {
 			isa = PBXGroup;
 			children = (
+				3A5CFEDA250F92EC00826CB4 /* FXMainDemo2VCL.h */,
 				3A5CFED6250F92EC00826CB4 /* FXMainDemo2VCL.m */,
 				3A5CFED7250F92EC00826CB4 /* Model */,
-				3A5CFEDA250F92EC00826CB4 /* FXMainDemo2VCL.h */,
 			);
 			path = Demo2;
 			sourceTree = "<group>";
@@ -216,8 +221,8 @@
 		3A5CFEDB250F92EC00826CB4 /* Demo4 */ = {
 			isa = PBXGroup;
 			children = (
-				3A5CFEDC250F92EC00826CB4 /* FXMainDemo4VCL.m */,
 				3A5CFEDD250F92EC00826CB4 /* FXMainDemo4VCL.h */,
+				3A5CFEDC250F92EC00826CB4 /* FXMainDemo4VCL.m */,
 			);
 			path = Demo4;
 			sourceTree = "<group>";
@@ -234,9 +239,9 @@
 		3A5CFEE4250F92EC00826CB4 /* Demo6 */ = {
 			isa = PBXGroup;
 			children = (
+				3A5CFEE7250F92EC00826CB4 /* FXTestStoryboardVCL.h */,
 				3A5CFEE5250F92EC00826CB4 /* FXTestStoryboardVCL.m */,
 				3A5CFEE6250F92EC00826CB4 /* FXTestStoryboardVCL.storyboard */,
-				3A5CFEE7250F92EC00826CB4 /* FXTestStoryboardVCL.h */,
 			);
 			path = Demo6;
 			sourceTree = "<group>";
@@ -267,6 +272,7 @@
 			isa = PBXGroup;
 			children = (
 				3A5CFF0B250F932E00826CB4 /* AmazonIVSPlayer.framework */,
+				EFD94A6EB256BAE5E20C326F /* Pods_FXDemos.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -277,6 +283,7 @@
 				44FBB932212E96AC00CED5A3 /* FXDemos */,
 				44FBB931212E96AC00CED5A3 /* Products */,
 				3A5CFF0A250F932E00826CB4 /* Frameworks */,
+				F89DFC2DA9D4D59C9DD61A74 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -302,6 +309,16 @@
 			path = FXDemos;
 			sourceTree = "<group>";
 		};
+		F89DFC2DA9D4D59C9DD61A74 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				31D328FD1787A4EF72B4A2EE /* Pods-FXDemos.debug.xcconfig */,
+				84F4A8DDFAF806EFE3A42981 /* Pods-FXDemos.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -309,6 +326,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 44FBB946212E96AF00CED5A3 /* Build configuration list for PBXNativeTarget "FXDemos" */;
 			buildPhases = (
+				6187329CFF01F5E26DB8DC6D /* [CP] Check Pods Manifest.lock */,
 				44FBB92C212E96AC00CED5A3 /* Sources */,
 				44FBB92D212E96AC00CED5A3 /* Frameworks */,
 				44FBB92E212E96AC00CED5A3 /* Resources */,
@@ -368,6 +386,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6187329CFF01F5E26DB8DC6D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FXDemos-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		44FBB92C212E96AC00CED5A3 /* Sources */ = {
@@ -525,6 +568,7 @@
 		};
 		44FBB947212E96AF00CED5A3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 31D328FD1787A4EF72B4A2EE /* Pods-FXDemos.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
@@ -536,6 +580,7 @@
 					"$(PROJECT_DIR)/AmazonIVSPlayer.xcframework/ios-armv7_arm64_arm64e",
 				);
 				INFOPLIST_FILE = FXDemos/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -544,12 +589,12 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALID_ARCHS = "arm64 arm64e armv7";
 			};
 			name = Debug;
 		};
 		44FBB948212E96AF00CED5A3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 84F4A8DDFAF806EFE3A42981 /* Pods-FXDemos.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
@@ -561,6 +606,7 @@
 					"$(PROJECT_DIR)/AmazonIVSPlayer.xcframework/ios-armv7_arm64_arm64e",
 				);
 				INFOPLIST_FILE = FXDemos/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -569,7 +615,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALID_ARCHS = "arm64 arm64e armv7";
 			};
 			name = Release;
 		};

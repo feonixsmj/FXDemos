@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface FXMainDemo4VCL : UIViewController
 
+@property (nonatomic, weak) UIView *view2;
 @end
 
 NS_ASSUME_NONNULL_END

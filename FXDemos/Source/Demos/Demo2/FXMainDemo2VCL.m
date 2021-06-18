@@ -358,11 +358,6 @@ extern void _objc_autoreleasePoolPrint(void);
 
 
 
-
-
-
-
-
 - (void)selectionSort3{
     NSMutableArray *muArr = [NSMutableArray arrayWithArray:self.array];
     for (NSInteger i = 0; i < muArr.count -1; i++) {
